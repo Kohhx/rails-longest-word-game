@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag "new.css" %>
+
+<div class="main-container"><h1>New Game</h1>
+  <div class="flex-container">
+    <% @grid_arr.each do |grid| %>
+      <div><%= grid %></div>
+    <% end %>
+  </div>
+    <br>
+  <h3>What is the longest word you can find?</h3>
+  <form action="score" method="post" data-turbo="false">
+    <input type="text" name="word" id="word">
+    <input type="submit" value="play" id="play">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  </form>
+</div>
